@@ -1,0 +1,16 @@
+language: php
+
+php:
+    - 7.2
+
+matrix:
+    fast_finish: true
+
+before_script:
+    - composer update --dev
+
+script: vendor/bin/phpunit
+
+notifications:
+    email:
+        - prager.adam87@gmail.com

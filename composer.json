@@ -9,16 +9,18 @@
             "email": "prager.adam87@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "DoctrineExtensions\\": "src/"
+        }
+    },
     "require": {
         "php": "^7.2",
         "doctrine/orm": "^2.6",
         "behat/transliterator": "^1.2",
         "symfony/property-access": "^4.2"
     },
-    "autoload": {
-        "psr-4": {
-            "DoctrineExtensions\\Common\\": "src/DoctrineExtensions/Common/",
-            "DoctrineExtensions\\Extension\\": "src/DoctrineExtensions/Extension/"
-        }
+    "require-dev": {
+        "phpunit/phpunit": "^8.0"
     }
 }
