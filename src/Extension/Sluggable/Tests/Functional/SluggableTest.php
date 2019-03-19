@@ -89,4 +89,16 @@ class SluggableTest extends AbstractFunctionalTestCase
 
         $this->assertEquals('this-is-a-custom-slug', $this->entity->getCallback());
     }
+
+    public function testUpdate()
+    {
+        $this->em->persist($this->entity);
+        $this->em->flush();
+
+        $this->entity->setSubtitle('Whatever');
+
+        $this->em->flush();
+
+        $this->assertEquals('clean-code: whatever', $this->entity->getGlue());
+    }
 }
