@@ -3,6 +3,7 @@
 namespace DoctrineExtensions\Extension\Sluggable\Annotation;
 
 use Behat\Transliterator\Transliterator;
+use DoctrineExtensions\Extension\Sluggable\Slugger\DefaultSlugger;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 
 /**
@@ -17,30 +18,23 @@ class Sluggable
     public $fields = [];
 
     /**
+     * The separator character is used to replace spaces
+     *
      * @var string
      */
     public $separator = '-';
 
     /**
-     * @var callable
+     * The glue is used to concat different fields. If left as null, it will fall back to the separator
+     *
+     * @var string
      */
-    public $callback;
+    public $glue;
 
-    public function __construct()
-    {
-        $this->callback = function ($entity, $fields, $separator) {
-            $parts = [];
-            $accessor = PropertyAccess::createPropertyAccessor();
-
-            foreach ($fields as $field) {
-                if ($accessor->isReadable($entity, $field)) {
-                    $parts[] = $accessor->getValue($entity, $field);
-                } else {
-                    // exception
-                }
-            }
-
-            return Transliterator::transliterate(implode($separator, $parts), $separator);
-        };
-    }
+    /**
+     * A valid callable or an FQCN of an invokable class.
+     *
+     * @var mixed
+     */
+    public $callback = DefaultSlugger::class;
 }

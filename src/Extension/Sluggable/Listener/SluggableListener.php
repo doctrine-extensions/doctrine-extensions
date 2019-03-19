@@ -43,7 +43,9 @@ class SluggableListener implements EventSubscriber
              * @var Sluggable $annotation
              */
             foreach ($sluggable['fields'] as $name => $annotation) {
-                $slug = call_user_func($annotation->callback, $entity, $annotation->fields, $annotation->separator);
+                $callback = is_string($annotation->callback) ? new $annotation->callback : $annotation->callback;
+
+                $slug = call_user_func($callback, $entity, $annotation->fields, $annotation->separator, $annotation->glue);
                 $accessor->setValue($entity, $name, $slug);
             }
         }
