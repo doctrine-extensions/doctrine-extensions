@@ -39,3 +39,9 @@ as a more mature product emerges.
 - Semantic versioning, backwards compatibility guarantee
 - Coding standards (likely [Doctrine's](https://github.com/doctrine/coding-standard))
 - Regular release cycle, possible LTS
+
+### Extension usability
+
+|           	| Stable 	| Beta 	| Alpha          	| In development 	| No progress 	| Discarded 	|
+|-----------	|--------	|------	|----------------	|----------------	|-------------	|-----------	|
+| Sluggable 	|        	|      	| :black_circle:	|                	|             	|           	|
