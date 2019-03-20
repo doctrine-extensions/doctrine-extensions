@@ -39,8 +39,21 @@ as a more mature product emerges.
 - Semantic versioning, backwards compatibility guarantee
 - Coding standards (likely [Doctrine's](https://github.com/doctrine/coding-standard))
 - Regular release cycle, possible LTS
+- Official framework integration bundles
 
-### Extension usability
+### What About Existing Users?
+
+We'd like to make the migration to this new package as effortless as possible.
+For some, migrating will not be possible (if you are using ODM or a mapping other
+than annotations).
+
+For others, we hope that a combination of official framework bundles, beautiful
+documentation, and possibly automated tools such as [Rector](https://github.com/rectorphp/rector)
+can make updating easy and stable.
+
+First, we need to get a set of extensions working. :smile:
+
+### Extension Usability
 
 |           | Stable | Beta | Alpha              | In development | No progress |
 |-----------|--------|------|:------------------:|----------------|-------------|
