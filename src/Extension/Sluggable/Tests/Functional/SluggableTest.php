@@ -29,11 +29,16 @@ class SluggableTest extends AbstractFunctionalTestCase
         ];
     }
 
+    public function getUsedEventSubscribers(): array
+    {
+        return [
+            new SluggableListener(),
+        ];
+    }
+
     public function setUp(): void
     {
         parent::setUp();
-
-        $this->em->getEventManager()->addEventSubscriber(new SluggableListener());
 
         $this->entity = new SluggableEntity();
         $this->entity

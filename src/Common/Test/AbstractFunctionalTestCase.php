@@ -38,6 +38,10 @@ abstract class AbstractFunctionalTestCase extends TestCase
 
         $em = EntityManager::create($conn, $config);
 
+        foreach ($this->getUsedEventSubscribers() as $eventSubscriber) {
+            $em->getEventManager()->addEventSubscriber($eventSubscriber);
+        }
+
         $schema = array_map(function ($class) use ($em) {
             return $em->getClassMetadata($class);
         }, (array) $this->getUsedEntityFixtures());
@@ -51,4 +55,5 @@ abstract class AbstractFunctionalTestCase extends TestCase
 
     abstract public function getUsedEntityFixtures(): array;
     abstract public function getUsedExtensions(): array;
+    abstract public function getUsedEventSubscribers(): array;
 }
