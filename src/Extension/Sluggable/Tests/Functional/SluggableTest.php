@@ -2,7 +2,6 @@
 
 namespace DoctrineExtensions\Extension\Sluggable\Tests\Functional;
 
-use DoctrineExtensions\Common\Metadata\Driver\AnnotationDriver;
 use DoctrineExtensions\Common\Test\AbstractFunctionalTestCase;
 use DoctrineExtensions\Extension\Sluggable\Listener\SluggableListener;
 use DoctrineExtensions\Extension\Sluggable\Metadata\Driver\SluggableDriverExtension;

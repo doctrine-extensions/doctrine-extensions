@@ -43,5 +43,6 @@ as a more mature product emerges.
 ### Extension usability
 
 |           | Stable | Beta | Alpha              | In development | No progress |
-|-----------|--------|------|:------------------:|----------------|-------------|
+|-----------|--------|------|:------------------:|:--------------:|-------------|
 | Sluggable |        |      | :black_circle:     |                |             |
+| Sluggable |        |      |                    | :black_circle: |             |
