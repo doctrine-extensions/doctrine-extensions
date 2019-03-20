@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/doctrine-extensions/doctrine-extensions.svg?branch=master)](https://travis-ci.org/doctrine-extensions/doctrine-extensions)
+
 ## All-New Doctrine Extensions
 
 Welcome to a **new** Doctrine extensions library. :high_brightness:
