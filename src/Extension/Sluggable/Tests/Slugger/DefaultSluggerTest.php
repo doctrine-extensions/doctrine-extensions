@@ -2,6 +2,7 @@
 
 namespace DoctrineExtensions\Extension\Sluggable\Tests\Slugger;
 
+use DoctrineExtensions\Common\Exception\UndefinedPropertyException;
 use DoctrineExtensions\Extension\Sluggable\Slugger\DefaultSlugger;
 use DoctrineExtensions\Extension\Sluggable\Tests\Fixtures\Entity\SluggableEntity;
 use PHPUnit\Framework\TestCase;
@@ -21,7 +22,6 @@ class DefaultSluggerTest extends TestCase
 
     function testTransliteration()
     {
-
         $slugger = new DefaultSlugger();
         $slug = $slugger($this->entity, ['title', 'subtitle'], '-');
 
@@ -30,10 +30,17 @@ class DefaultSluggerTest extends TestCase
 
     function testGlue()
     {
-
         $slugger = new DefaultSlugger();
         $slug = $slugger($this->entity, ['title', 'subtitle'], '-', ': ');
 
         $this->assertEquals('clean-code: a-handbook-of-agile-software-craftsmanship', $slug);
+    }
+
+    function testUndefinedPropertyException()
+    {
+        $this->expectException(UndefinedPropertyException::class);
+
+        $slugger = new DefaultSlugger();
+        $slugger($this->entity, ['title', 'imNotReal'], '-', ': ');
     }
 }

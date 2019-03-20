@@ -3,6 +3,7 @@
 namespace DoctrineExtensions\Extension\Sluggable\Slugger;
 
 use Behat\Transliterator\Transliterator;
+use DoctrineExtensions\Common\Exception\UndefinedPropertyException;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 
 class DefaultSlugger implements SluggerInterface
@@ -20,7 +21,7 @@ class DefaultSlugger implements SluggerInterface
             if ($accessor->isReadable($entity, $field)) {
                 $parts[] = Transliterator::transliterate($accessor->getValue($entity, $field), $separator);
             } else {
-                // exception
+                throw new UndefinedPropertyException($entity, $field);
             }
         }
 
