@@ -24,12 +24,7 @@ and [KnpLabs/DoctrineBehaviors](https://github.com/KnpLabs/DoctrineBehaviors).
 
 We are accepting contributors interested in rewriting and maintaining 1-2 extensions.
 
-#### Development Requirements
-
-- Minimum PHP version of 7.2
-- Doctrine ORM support only (no MongoDB ODM)
-- Annotations mapping support only
-- Test all the things!
+[Documentation for our architecture and creating an extension.](docs)
 
 ### Future Goals
 
