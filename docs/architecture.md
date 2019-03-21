@@ -2,9 +2,9 @@
 
 ## Targeted Compatibility
 
-PHP >= 7.2
-Doctrine ORM 2.6+, 3.0 (no ODM / MongoDB - ORM only)
-Doctrine Annotations Driver only
+- PHP >= 7.2
+- Doctrine ORM 2.6+, 3.0 (no ODM / MongoDB - ORM only)
+- Doctrine Annotations Driver only
 
 ## File Structure
 
