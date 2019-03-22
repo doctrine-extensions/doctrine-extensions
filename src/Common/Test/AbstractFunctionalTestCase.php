@@ -5,8 +5,9 @@ namespace DoctrineExtensions\Common\Test;
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\ORM\Configuration;
 use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\Mapping\Driver\AnnotationDriver;
 use Doctrine\ORM\Tools\SchemaTool;
-use DoctrineExtensions\Common\Metadata\Driver\AnnotationDriver;
+use DoctrineExtensions\Common\Metadata\Driver\ExtensionDriver;
 use DoctrineExtensions\Common\Metadata\ExtendedClassMetadataFactory;
 use PHPUnit\Framework\TestCase;
 
@@ -19,7 +20,8 @@ abstract class AbstractFunctionalTestCase extends TestCase
 
     public function setUp(): void
     {
-        $driver = new AnnotationDriver(new AnnotationReader());
+        $reader = new AnnotationReader();
+        $driver = new ExtensionDriver(new AnnotationDriver($reader), $reader);
 
         foreach ($this->getUsedExtensions() as $extension) {
             $driver->addExtension($extension);
