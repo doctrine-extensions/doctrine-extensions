@@ -6,7 +6,6 @@ use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\LifecycleEventArgs;
 use Doctrine\ORM\Events;
 use DoctrineExtensions\Common\Metadata\ExtendedClassMetadata;
-use DoctrineExtensions\Extension\Timestampable\Annotation\Sluggable;
 use DoctrineExtensions\Extension\Timestampable\Annotation\Timestampable;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 
