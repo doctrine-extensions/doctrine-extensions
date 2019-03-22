@@ -50,6 +50,7 @@ First, we need to get a set of extensions working. :smile:
 
 ### Extension Usability
 
-|           | Stable | Beta | Alpha              | In development | No progress |
-|-----------|--------|------|:------------------:|----------------|-------------|
-| Sluggable |        |      | :black_circle:     |                |             |
+|               | Stable | Beta | Alpha              | In development | No progress |
+|---------------|--------|------|:------------------:|:--------------:|-------------|
+| Sluggable     |        |      | :black_circle:     |                |             |
+| Timestampable |        |      |                    | :black_circle: |             |
