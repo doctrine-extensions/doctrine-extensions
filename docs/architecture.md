@@ -30,8 +30,7 @@ The resulting [metadata class](../src/Common/Metadata/ExtendedClassMetadata.php)
 the information needed for each extension to perform.
 
 > :rotating_light: Doctrine Extensions **only supports Annotations** at this time.
-> If you use another type of metadata driver (e.g. YAML) or you've configured a
-> different custom Annotation driver, this package is incompatible.
+> You can any type of mapping for your doctrine configuration, but extensions can only be mapped with annotations.
 
 ## Lifecycle
 
